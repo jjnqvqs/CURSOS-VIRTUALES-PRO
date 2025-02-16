@@ -1,1 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Virtual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.postimg.cc/jSDC2vcQ/dv.jpg'); /* Fondo editable */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
 
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        #logo {
+            width: 410px;
+            height: 292px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 10px 0;
+        }
+
+        .search-bar {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 80%;
+            padding: 20px;
+            font-size: 1em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .product {
+            width: 90%;
+            margin: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product h3 {
+            font-size: 1.5em;
+            margin: 30px 0 5px 0;
+        }
+
+        .product p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #20b954;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="https://i.postimg.cc/59kcGp1L/White-Modern-Online-Course-Animated-Video.gif" alt="Logo de la tienda">
+        <h1>CURSOS ONLINE</h1>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar curso..." onkeyup="filterProducts()">
+    </div>
+
+    <div class="product-container" id="productContainer">
+        <!-- Producto 1 -->
+        <div class="product" data-name="BOOTCAMP FRONTEND">
+            <img src="https://i.postimg.cc/W3SJMz1S/IMG-20241215-122650-067.jpg" alt="Producto 1 - Imagen 2">
+            <h3>BOOTCAMP FRONTEND</h3>
+            <p>🌐 Descripción: Comenzarás con lo básico: la estructura de una página web, la maquetación con HTML, y cómo aplicar estilos usando CSS. Luego, avanzarás a conceptos más complejos como el diseño responsivo, la animación con CSS, y el uso de JavaScript para agregar interactividad. Además, aprenderás sobre frameworks como React y cómo hacer que tu sitio sea más dinámico y fácil de mantener.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20BOOTCAMP%20FRONTEND$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name="CURSO DE MYSQL">
+            <img src="https://i.postimg.cc/wvW71rwG/IMG-20241215-123039-965.jpg" alt="Producto 1 - Imagen 2">
+            <h3>CURSO DE MYSQL</h3>
+            <p>CURSO DE MYSQL</h2>
+            <p>🔍 Descripción: Comenzarás con lo fundamental: instalación de MySQL, creación de bases de datos, tablas y relaciones, y cómo insertar, actualizar y eliminar datos. A medida que avances, aprenderás sobre índices, claves primarias y foráneas, vistas, procedimientos almacenados y triggers. También verás cómo optimizar consultas y manejar grandes volúmenes de datos, garantizando la eficiencia de tu sistema.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20DE%20MYSQL%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name="CREA UN BEST SELLER">
+            <img src="https://i.postimg.cc/Sxr20jW4/IMG-20241215-123243-001.jpg" alt="Producto 1 - Imagen 2">
+            <h3>CREA UN BEST SELLER</h3>
+            <p>CREA UN BEST SELLER</h2>
+            <p>✍️ Descripción: Aprenderás a construir personajes memorables, escribir un argumento convincente, y optimizar tu escritura para mantener el interés de los lectores de principio a fin. Además, conocerás técnicas de marketing editorial, cómo aprovechar las plataformas de autopublicación y las mejores prácticas para la promoción de tu libro en las redes sociales y otros canales.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CREA%20UN%20BEST%20SELLER%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+                <div class="product" data-name="CURSO ACTUALIZADO DE YOUTUBE ADS">
+            <img src="https://i.postimg.cc/Yqq4DwkF/IMG-20241210-043146-742.jpg" alt="Producto 1 - Imagen 2">
+            <h3>CURSO ACTUALIZADO DE YOUTUBE ADS</h3>
+            <p>📊 Descripción: A lo largo del curso, descubrirás cómo elegir los formatos de anuncios más efectivos, desde los anuncios TrueView hasta los anuncios bumper y display. Aprenderás a configurar campañas de video, optimizar tus anuncios para aumentar la tasa de clics, y medir los resultados con herramientas de análisis para mejorar continuamente tus estrategias publicitarias.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20ACTUALIZADO%20DE%20YOUTUBE%20ADS%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name="CREACION DE CONTENIDO EN TIK TOK">
+            <img src="https://i.postimg.cc/kX3V9txx/IMG-20241210-044004-207.jpg" alt="Producto 1 - Imagen 2">
+            <h3>CREACION DE CONTENIDO EN TIK TOK</h3>
+            <p>💡 Descripción: Explorarás estrategias para identificar tu nicho, generar ideas innovadoras y optimizar el uso de hashtags y sonidos populares para maximizar el alcance de tus publicaciones. Además, conocerás tácticas para convertir seguidores en una comunidad fiel y construir tu marca personal o de negocio en esta plataforma dinámica.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CREACION%20DE%20CONTENIDO%20EN%20TIK%20TOK%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        <!-- Producto 2 -->
+        <div class="product" data-name="CIBERSEGURIDAD">
+            <img src="https://i.postimg.cc/KYwGNdfn/IMG-20241210-044334-495.jpg" alt="Producto 2 - Imagen 2">
+            <h3>CIBERSEGURIDAD</h3>
+            <p>🛡️ Descripción: Descubrirás cómo funcionan los sistemas de encriptación, firewalls, y análisis de vulnerabilidades, además de explorar estrategias para proteger redes, aplicaciones y dispositivos frente a amenazas externas. También abordarás temas como la gestión de riesgos, normativas de seguridad y las mejores prácticas para educar a los usuarios en entornos corporativos y personales.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20DE%20CIBERSEGURIDAD%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        <div class="product" data-name="LAPTOPS PC COMPUTADORAS">
+            <img src="https://i.postimg.cc/t4mpqLLL/IMG-20241210-044626-406.jpg" alt="Producto 1 - Imagen 2">
+            <h3>LAPTOPS PC COMPUTADORAS</h3>
+            <p>🔧 Descripción: Aprenderás a identificar y reemplazar componentes defectuosos, solucionar fallos de arranque, optimizar el rendimiento del sistema y reparar pantallas, teclados y sistemas de enfriamiento. Además, abordarás métodos para resolver problemas de software y realizar mantenimientos preventivos que prolonguen la vida útil de las laptops.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20PROFESIONAL%20REPARACIÓN%20DE%20LAPTOPS%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name="QPYTHON IPTV">
+            <img src="https://i.postimg.cc/T2WrpBvt/Neon-Green-Bear-Mascot-Gaming-Logo.png" alt="Producto 1 - Imagen 2">
+            <h3>CURSO QPYTHON PRO</h3>
+            <p>ESTE CURSO ABORDA TEMAS DESDE LO MÁS BÁSICO HASTA LO MÁS AVANZADO☄️
+╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+🔥𝐂𝐎𝐍𝐓𝐄𝐍𝐈𝐃𝐎 𝐃𝐄𝐋 𝐂𝐔𝐑𝐒𝐎:
+
+📱INSTALACIÓN DE PROGRAMAS
+📱CREAR CARPETAS UTILES
+📱COPIAR PY PARA INICIAR
+📱INSTALACIÓN DE COMANDOS NECESARIOS
+📱SOLUCIÓN ERRORES DE PY
+📱CREAR COMBOS M3U
+📱 CREAR COMBOS MAC
+📱ESCANEO DE SERVIDORES
+📱ESCANEO CUENTAS XPLOIT
+📱ESCANEO CUENTAS MAC
+📱AREA 51
+📱PLATAFORMAS CON PROXY
+📱ESCANEAR PUERTOS
+📱PANELES LATERALES
+📱REPRODUCCIÓN DE HITS
+📱REPRODUCCIÓN DE MAC
+📱CHECK LISTAS
+📱LISTAS PRIVADAS
+📱CLASE OTTPLAYER
+📱CAMBIAR NOMBRES DE PY SIN ERRORES
+📱XPLOIT POR IP 1 Y 2
+📱SERVIDORES MAC
+📱HITS POR TERMUX
+╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+🌟NUESTRO CURSO SE ENFOCA EN GENERAR INGRESOS MEDIANTE QPYTHON </p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20QPYTHON%20PRO*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name="OPENBULLET PARA PRINCIPIANTES">
+            <img src="https://i.postimg.cc/RhDVCRQ3/IMG-20250118-160102-727.jpg" alt="Producto 1 - Imagen 2">
+            <h3>CURSO OPENBULLET PARA PRINCIPIANTES</h3>
+            <p>QUIERES APRENDER A SACAR TUS PROPIOS HITS, LLEGASTE AL LUGAR INDICADO
+
+ESTE CURSO ABORDA TEMAS DESDE LO MÁS BÁSICO HASTA LO MÁS AVANZADO
+╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+
+🔥𝐂𝐎𝐍𝐓𝐄𝐍𝐈𝐃𝐎 𝐃𝐄𝐋 𝐂𝐔𝐑𝐒𝐎:
+
+1. PROGRAMAS PARA PASAR VERIFICACIÓN
+2. COMO USAR HERRAMIENTAS
+3. AGREGAR ROBA HITS A CONFIGURACIONES
+4. ARMAR UN CHECKER
+5. ASTREPLAYER WEB
+6. BANDICAM
+7. BT VALID MAIL
+8. BYPASS CAPTCHA SIMPLE
+9. CAPCUT
+10. CAPTURAR TRAFICO ANDROID APP CON BURPSUITE
+11. CINE ARGENTINO
+12. CLARO VIDEO POR MS
+13. CLOUDFLARE BYPASS (GET)
+14. COMBO BRASIL
+15. COMO CAPTURA DATOS SSL PINNING
+16. COMO CREAR CONFIG PANEL UNIVERSAL
+17. COMO CREAR UN HIT_SENDER BOT
+18. COMO ENTENDER EL AREA Y HERRAMIENTAS DE CRACKING
+19. COMO HACER LA CAPTURA DE DATOS EN CONFIG SELENIUM
+20. COMO USAR BURBSUITE
+21. COMO USAR E INSTALAR OPENBULLET
+22. COMO USAR LA PROGRAMACIÓN EN SILVERBULLET
+23. COMO USAR BLOQUE UTILITY
+24. COMO USAR CONDICIONALES (IF,ELSE,ENDIF)
+25. COMO VOLAR CAPTCHAS v2,v3 EN SILVERBULLET
+26. CONFIG CC LIVE
+27. CONFIG CON SELENIUM
+28. CONFIG IPTV
+29. CONFIG PARAMOUNT
+30. CONFIG SELENIUM PARTE 1
+31. CONFIG SELENIUM PARTE 2
+32. CREACION DE COMBOS EMAIL_PASS ANTI-PUBLI
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20OPENBULLET%20$80000*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name="PROGRAMACION BACKEND-CODER HOUSE">
+            <img src="https://i.postimg.cc/Qtm6srz7/IMG-20241210-045054-038.jpg" alt="Producto 1 - Imagen 2">
+            <h3>PROGRAMACION BACKEND-CODER HOUSE</h3>
+            <p>🔧 Descripción: Aprenderás a diseñar APIs RESTful, manejar autenticación de usuarios, implementar seguridad en servidores y optimizar el rendimiento de las aplicaciones. A medida que avances, abordarás temas esenciales como el despliegue en la nube y la integración con tecnologías modernas como Docker.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20PROGRAMACION%20BACKEND-CODER%20HOUSE%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        <!-- Producto 2 -->
+        <div class="product" data-name="CURSO DE SAP">
+            <img src="https://i.postimg.cc/hPfCF61J/IMG-20241210-045348-100.jpg" alt="Producto 2 - Imagen 2">
+            <h3>CURSO DE SAP</h3>
+            <p>📊 Descripción: Durante este curso, explorarás la interfaz de SAP, entenderás cómo funcionan los módulos principales y aprenderás a realizar operaciones básicas y avanzadas para gestionar datos e informes de manera eficiente. Además, te enseñaremos a resolver problemas comunes y a personalizar el sistema según las necesidades de tu organización.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20DE%20SAP%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+               <div class="product" data-name="INSTAGRAM PARA NEGOCIOS">
+            <img src="https://i.postimg.cc/MGb5bSqL/IMG-20241210-045732-216.jpg" alt="Producto 1 - Imagen 2">
+            <h3>INSTAGRAM PARA NEGOCIOS</h3>
+            <p>📚 Descripción: A lo largo del curso, descubrirás cómo optimizar tu perfil de negocio, crear contenido visual atractivo y desarrollar una estrategia de publicaciones que aumente el engagement. También aprenderás a utilizar herramientas clave como Instagram Stories, Reels y anuncios para captar la atención de tu audiencia y convertir seguidores en clientes fieles.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20INSTAGRAM%20PARA%20NEGOCIOS%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name="FACEBOOK WHATSAPP DINERO">
+            <img src="https://i.postimg.cc/652hbRBn/IMG-20241210-050026-237.jpg" alt="Producto 1 - Imagen 2">
+            <h3>FACEBOOK WHATSAPP DINERO</h3>
+            <p>📚 Descripción: Explorarás técnicas para crear contenido atractivo, aumentar tu audiencia de forma orgánica y aprovechar el poder del marketing de recomendación y las redes sociales. Además, aprenderás a usar WhatsApp para ofrecer atención personalizada a tus clientes, cerrar ventas y mantener una comunicación constante con tu público objetivo.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20GANA%20DINERO%20CON%20FACEBOOK%20Y%20WHATSAPP%20SIN%20INVERTIR%20UN%20PESO%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        <!-- Producto 2 -->
+        <div class="product" data-name="CURSO COMPLETO DE ELECTRÓNICA">
+            <img src="https://i.postimg.cc/4xpQsg73/IMG-20241210-050315-168.jpg" alt="Producto 2 - Imagen 2">
+            <h3>CURSO COMPLETO DE ELECTRÓNICA</h3>
+            <p>📚 Descripción: Aprenderás a identificar y utilizar resistores, capacitores, transistores y otros componentes esenciales para diseñar y construir circuitos. A medida que avances, descubrirás cómo trabajar con microcontroladores, sensores y actuadores para crear proyectos electrónicos que integren software y hardware. Además, aprenderás a usar herramientas como multímetros, osciloscopios y simuladores de circuitos.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20COMPLETO%20DE%20ELECTRÓNICA%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        <div class="product" data-name="CURSO DE BISUTERÍA">
+            <img src="https://i.postimg.cc/HLH4LhX9/IMG-20241210-050530-112.jpg" alt="Producto 1 - Imagen 2">
+            <h3>CURSO DE BISUTERÍA</h3>
+            <p>📚 Descripción: Explorarás técnicas esenciales como el uso de alambre, cordones, abalorios, piedras y otros materiales, para crear collares, pulseras, pendientes y anillos. Aprenderás cómo montar tus diseños, hacer combinaciones armoniosas y aplicar acabados que brinden calidad y durabilidad a tus creaciones. Además, te enseñaré a crear un portafolio visual para promocionar tu bisutería de forma efectiva.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20DE%20BISUTERÍA%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        
+        <div class="product" data-name="SUPER CEREBRO">
+            <img src="https://i.postimg.cc/jSFTJbTN/IMG-20241215-123448-560.jpg" alt="Producto 1 - Imagen 2">
+            <h3>SUPER CEREBRO</h3>
+            <p>⚡️ Descripción: A lo largo del curso, explorarás métodos efectivos para mejorar tu capacidad de aprendizaje, resolver problemas más rápidamente y tomar decisiones más acertadas. Te enseñaremos cómo activar tu creatividad, reducir el estrés mental y entrenar tu cerebro para mantener un enfoque constante, incluso en momentos de presión.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20SUPER%20CEREBRO%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name="MEJORA TUS HÁBITOS FINANCIEROS">
+            <img src="https://i.postimg.cc/Jtwmtwkm/IMG-20241215-123807-496.jpg" alt="Producto 1 - Imagen 2">
+            <h3>MEJORA TUS HÁBITOS FINANCIEROS</h3>
+            <p>📊 Descripción: En este curso, descubrirás cómo establecer metas financieras claras y alcanzables, cómo reducir tus deudas y cómo ahorrar de manera inteligente para proyectos futuros. Aprenderás a hacer un seguimiento detallado de tus gastos y a tomar decisiones financieras informadas que te ayuden a crecer económicamente.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20MEJORA%20TUS%20HÁBITOS%20FINANCIEROS%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name= "CURSO DE JABONES Y VELAS">
+            <img src="https://i.postimg.cc/zfPf5c0D/IMG-20241215-124124-786.jpg" alt="Producto 1 - Imagen 2">
+            <h3>CURSO DE JABONES Y VELAS</h3>
+            <p>🧼 Descripción: Explorarás cómo personalizar tus creaciones para diferentes ocasiones y cómo empaquetarlas de manera atractiva para su venta. Ya sea que quieras vender tus productos en línea, en mercados artesanales o regalar creaciones únicas, este curso te proporcionará todo lo necesario para crear jabones y velas que conquisten a tus clientes.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20DE%20JABONES%20Y%20VELAS%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product-container" id="productContainer">
+        <!-- Producto 1 -->
+        <div class="product" data-name="CURSO PENTESTING ANDROID APPS">
+            <img src="https://i.postimg.cc/hG7VkT1Y/IMG-20241215-130303-586.jpg" alt="Producto 1 - Imagen 2">
+            <h3>CURSO PENTESTING ANDROID APPS</h3>
+            <p>📱 Descripción: Comenzarás por entender los fundamentos de la seguridad en aplicaciones móviles, explorando las amenazas comunes como la inyección de código, la manipulación de datos y las vulnerabilidades en la comunicación. Aprenderás a utilizar herramientas especializadas como Burp Suite, Frida y APKTool para analizar el comportamiento de las aplicaciones y realizar pruebas de seguridad efectivas.</p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20PENTESTING%20ANDROID%20APPS%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name="CURSO MARCADO DE CUADERNOS">
+            <img src="https://i.postimg.cc/htmjgrNV/IMG-20241215-130522-386.jpg" alt="Producto 1 - Imagen 2">
+            <h3>CURSO MARCADO DE CUADERNOS</h3>
+            <p>🎨 Descripción: Descubrirás cómo seleccionar el tipo de papel adecuado, crear portadas originales y dominar las técnicas de marcado y cosido, como el cosido japonés y el cosido en espina de pescado. Además, aprenderás a utilizar herramientas como agujas, hilos y troqueles para agregar detalles personalizados a cada cuaderno. </p>
+            <a href="https://wa.me/573207680836?text=*COMPRAR%20CURSO%20MARCADO%20DE%20CUADERNOS%20$15600*" class="whatsapp-button">COMPRAR</a>
+        </div>
+        
+        <div class="product" data-name="CURSO DE LETTERING">
+            <img src="https://i.postimg.cc/Fs98hsqp/IMG-20241215-131218-750.jpg" alt="Producto 1 - Imagen 2">
+            <h3>CURSO DE LETTERING</h3>
+            <p>🖋 Descripción: Aprenderás a utilizar diferentes herramientas como pinceles, marcadores y bolígrafos, y a dominar los fundamentos del trazo, la composición y
